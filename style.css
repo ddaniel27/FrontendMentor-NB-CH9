@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root{
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --traslucid-cyan: #00fff763;
+    --very-dark-blue: hsl(217, 54%, 11%);
+    --very-dark-blue-card: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+
+body{
+    background: var(--very-dark-blue);
+    display: grid;
+    grid-template-rows: 80vh 20vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background: var(--very-dark-blue-card);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    padding: 20px;
+    margin: 2rem auto 0;
+    display: grid;
+    grid-template-rows: 50% 40% 10%;
+    height: 80%;
+    width: 90%;
+    max-width: 375px;
+    min-height: 520px;
+    max-height: 600px;
+}
+.main-img{
+    position: relative;
+}
+
+.main-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.main-img::before{
+    content: '';
+    cursor: pointer;
+    background: url(images/icon-view.svg) no-repeat center, linear-gradient(var(--traslucid-cyan), var(--traslucid-cyan));
+    border-radius: 8px;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 0.1s ease-in;
+}
+.main-img:hover::before{
+    opacity: 1;
+}
+.info{
+    margin: 1.5rem 0 0;
+    display: grid;
+    grid-template-rows: repeat(2,35%) 20% 10%;
+}
+
+.info h2{
+    font-size: 1.8rem;
+    color: white;
+}
+
+.info h2:hover{
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.info .description{
+    font-size: 1.1rem;
+    color: var(--soft-blue);
+}
+
+.info .currency{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-self: end;
+}
+
+.currency .eth{
+    color:var(--cyan);
+    font-weight: 600;
+}
+
+.currency .eth::before{
+    content:url('images/icon-ethereum.svg');
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    position:relative;
+    top: 3px;
+    
+}
+
+.currency .time-left{
+    color: var(--soft-blue);
+    text-align: right;
+}
+
+.currency .time-left::before{
+    content:url('images/icon-clock.svg');
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 13px;
+    position:relative;
+    top: 3px;
+}
+
+.info hr{
+    border: 1px solid var(--very-dark-blue-line);
+    height: 1px;
+    margin: 1rem 0 0;
+}
+
+.creator-info{
+    display: grid;
+    grid-template-columns: 40px 3fr;
+    align-items: center;
+}
+
+.creator-info img{
+    border: 2px solid white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+
+}
+
+.creator-info .creator-text{
+    color: var(--soft-blue);
+    font-size: 1.1rem;
+    justify-self: start;
+    margin-left: 10px;
+
+}
+
+.creator-text span{
+    color: white;
+}
+
+.creator-text span:hover{
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.attribution{
+    color: var(--soft-blue);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.attribution a{
+    color: white;
+    text-decoration: none;
+}
+
+.attribution a:hover{
+    text-decoration: underline;
+}
+
+.attribution a:active{
+    color: var(--cyan);
+}
